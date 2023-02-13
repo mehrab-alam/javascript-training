@@ -41,16 +41,16 @@ const c8 = 23425;
 const c9 = "nineth const";
 const c10 = "tenth const";
 
-const c1 = "alam";
-const c2 = 232234;
-const c3 = "third re-const";
-const c4 = "fourth re-const";
-const c5 = 12212344;
-const c6 = "sixth re-const";
-const c7 = "seventh re-const";
-const c8 = 23423245;
-const c9 = "nineth re-const";
-const c10 = "tenth re-const";
+c1 = "alam";
+c2 = 232234;
+c3 = "third re-const";
+c4 = "fourth re-const";
+c5 = 12212344;
+c6 = "sixth re-const";
+c7 = "seventh re-const";
+c8 = 23423245;
+c9 = "nineth re-const";
+c10 = "tenth re-const";
 
 console.log(c1)
 console.log(c2)
