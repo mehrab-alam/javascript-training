@@ -24,9 +24,11 @@ Create 10 variables using a combination of alphabets, numbers, underscore, hyphe
  - Only numeric or variables starting with numerics are not allowed
  - **$** can be used between alphabets 
 
- Create variable for storing the department of an employee
-
+ 
 ### Assignment 1.2
+
+- Create variable for storing the department of an employee
+
 - Create a variable for storing name of the teacher of the school
 
 - Create a variable for storing name of the dish item in a restuarant
@@ -51,12 +53,18 @@ A constant takes a single value, and the variable cannot be re-assigned another 
 ```js
 const databaseName = "DB_PRODUCTION";
 ```
-//Declare 10 constants - c1, c2, ..... c10 ( Use either string or number as the value)
 
+#### Assignment 1.3
+
+Declare 10 constants - c1, c2, ..... c10 ( Use either string or number as the value)
+
+```
 const c1 = "constant 1";
+```
+Try re-assigning the variables and see the error
+```
+c1 = "constant 2"
+```
 
-//Try re-assigning the variables and see the error
-c1 = "constant 2";
-
-// Display the value of all the 10 constants declared above
+Display the value of all the 10 constants declared above
 
