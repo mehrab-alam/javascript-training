@@ -4,4 +4,9 @@ This repository is for offline training conducated at Torqbit Software Developme
 
 ### How to use it?
 
-For each day there are code snippets that helps the student to practice a single concept
+For each subject there is a directory where we learn about the concepts and practice it.
+
+### Topics Covered
+
+1. Variables and Data types
+2. Operators
