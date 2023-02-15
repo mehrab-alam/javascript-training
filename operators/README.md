@@ -26,7 +26,7 @@ Here the variable will store a numeric value
 
 - Multiply two numbers (5 different number pairs) and store the result in r1...r5
 
-- Divide two numbers (5 different number pairs) and store the result in r1...r5
+- Substract two numbers (5 different number pairs) and store the result in r1...r5
 - Find remainder of two numbers (5 different number pairs) and store the result in r1...r5
 
 Example
@@ -108,3 +108,90 @@ Guess the output of the following operations
 ```
 10 == 6 < true
 ```
+
+#### Using equality operator (==, ===)
+
+== operator matches the values without caring about the data types, while ==== matches the values and types.
+
+```
+let year = '2020';
+year == 2020
+
+year === 2020
+```
+
+#### Assignment 2.5
+
+a. Create a variable age and assign it from the prompt as shown below. If the age is 24, then print
+'You are your peak', else if age is less than 24 then print 'You are too young' and if greater than 24, print 'You are too old'
+
+```
+prompt("Input your age ")
+```
+
+b. Write a program to guess a number between 0 and 100. Prompt the user to think of a number and then ask questions to find out the right number. Sample question.
+
+Is the number greater than 50? If the user enters 'Y' in the prompt, then ask again : Is the number less than 90, and so on.
+
+### The AND, OR & NOT Operator
+
+##### AND Operator
+
+1. a = true
+   b = true
+   a && b is true
+
+2. a = false
+   b = true
+   OR
+   a = true
+   b = false
+   then
+   a && b is false
+
+3. a = false
+   b = false
+   then
+   a && b is false
+
+##### OR Operator
+
+1. a = true
+   b = true
+   a || b is true
+
+2. a = false
+   b = true
+   OR
+   a = true
+   b = false
+   then
+   a || b is true
+
+3. a = false
+   b = false
+   then
+   a || b is false
+
+##### NOT Operator
+
+1. a = true
+   !a is false
+
+2. a = false
+   !a is false
+
+#### Assignment 2.6
+
+1. If we need a range of years between 2020 and 2030, then which Boolean logic operator will be used
+
+2. Given an age and the qualification and the father's name, decide which logic operator will be used when entrace test eligibility rules are as follows:
+   Any two among the below should be true
+   a. age > 20
+   b. qualification = "B.Tech"
+   c. son of a politician
+3. Given students marks in a subject, print out the grade as per the below rules.
+   a. marks between 90 - 100 = Grade A
+   b. marks between 70 - 90 = Grade B
+   c. marks between 50 - 70 = Grade C
+   d. marks below 50 = Grade C

@@ -104,8 +104,25 @@ let name = "My Name";
    let isCountry = true
    ```
 
+   There are few false and true values that are represented as String or numeric.
+
+   - 0 represents false
+   - `undefined` value represents false
+   - All positive or negative numbers represent true
+   - Non-empty String value represents true
+   - Empty object represents true
+
+   Example
+
+   ```
+   console.log(Boolean({}))
+   console.log(Boolean('Axis'))
+   console.log(Boolean(0))
+   ```
+
 #### Assignment 1.5
 
+- Declare 10 variables that store boolean values using the Boolean constructor
 - Declare 5 variables that store boolean value 'true'
 
   Example
@@ -136,3 +153,40 @@ console.log(typeof isCold)
   console.log(year);
   ```
 - Next assign numeric values to all the variables and display the typeof all the above variables
+
+#### Data type conversion
+
+A String data type can be converted into a number using the following type casting method.
+
+```
+const year = "2020"
+year = Number(year)
+typeof year
+```
+
+If the String cannot be created to the number, that javascript fails with `NaN`, which means invalid number or Not a Number.
+
+You can also convert number to string using String constructure object.
+
+```
+const yearNumber = String('2020')
+```
+
+#### Assignment 1.7
+
+Initialize a variable yearOfBirth to your birth year (number). Change this number to string and then back to number.
+
+#### Automatic type coercion
+
+Based on the context, the number is interpreted as string and string is interpreted as a number.
+
+```
+console.log("I am " + 22 + " years old")
+console.log("22" - 2 - "30")
+console.log("22" + 2 + "30")
+```
+
+Here the **plus** operator is interpreted as concatenation operator , while the **minus** operator is treated as the arithmetic operator and hence the numbers used in quotes are converted into numbers and not string.
+
+**Note**
+It's a bad practice to use type coercion and must be avoided at all cost.
