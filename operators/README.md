@@ -139,7 +139,7 @@ Is the number greater than 50? If the user enters 'Y' in the prompt, then ask ag
 
 1. a = true
    b = true
-   a && b is true
+   then a && b is true
 
 2. a = false
    b = true
@@ -179,19 +179,98 @@ Is the number greater than 50? If the user enters 'Y' in the prompt, then ask ag
    !a is false
 
 2. a = false
-   !a is false
+   then !a is true
 
 #### Assignment 2.6
 
 1. If we need a range of years between 2020 and 2030, then which Boolean logic operator will be used
 
 2. Given an age and the qualification and the father's name, decide which logic operator will be used when entrace test eligibility rules are as follows:
+
    Any two among the below should be true
+   
    a. age > 20
+
    b. qualification = "B.Tech"
+
    c. son of a politician
+
 3. Given students marks in a subject, print out the grade as per the below rules.
+
    a. marks between 90 - 100 = Grade A
+   
    b. marks between 70 - 90 = Grade B
+   
    c. marks between 50 - 70 = Grade C
+   
    d. marks below 50 = Grade C
+
+
+#### Switch statement
+
+switch statments allow you to jump directly to a specific statement based on the matched condition. Let's look at an example:
+
+```js
+let country = "India"
+let price;
+
+switch(country){
+   case 'US':
+      price = 1000;
+      break;
+   
+   case 'India':
+      price = 250;
+      break;
+   
+   case 'China':
+      price = 500
+      break;
+   
+   default:
+      price = 600
+}
+```
+
+#### Assignment 2.7
+
+1. Write a program to find the selling price of an item in different state, given the profit percentage as 10% and cost price as 100, and VAT(applied on cost price) based on the state as follows:
+   - **Uttar Pradesh** - 12.5%
+   - **Madhya Pradesh** - 10%
+   - **Bihar** - 15%
+   - **Karnataka** - 10%
+
+2. Find the minimum marks required to qualify for an entrance examination, given the category of the student as follows and maximum marks as 500.
+   - **OBC** - 65%
+   - **SC** - 55%
+   - **General** - 75%
+
+#### Expressions
+
+Something that produces a value like:
+
+```
+22 + 45
+22 > 20
+```
+
+Expressions can be used in variety of places like in the if condition, template literal, or while assigning the variable.
+
+### Ternary Operator
+
+This is used when you need to execute single statement or expression if a condition is true or false.
+
+```
+const gender = 'male'
+const marriageAge = gender == 'male' ? 21 : 18
+```
+
+### Assignment 2.8
+
+1. Given the manufacturing year of the vehicle, find if the vehicle registration is valid or not. The manufacturing year is 2010, and registration is valid for 15 years. **Hint** Use the date object to find the current year.
+
+2. Given the pulse rate range for stable patient, find out if the patient with pulse rate as 100 is stable or not.
+ 
+ Stable pulse rate = 65 - 100.
+
+3. Use template literal for the above problems.
