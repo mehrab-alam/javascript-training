@@ -116,7 +116,7 @@ let name = "My Name";
 
    ```
    console.log(Boolean({}))
-   console.log(Boolean('Axis'))
+   console.log(Boolean('Axis')
    console.log(Boolean(0))
    ```
 
