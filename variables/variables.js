@@ -5,19 +5,19 @@
 
 
 let name_12 = "mehrab";
-console.log(typeof name_12)
+// console.log(typeof name_12)
 
 // let name_@ = "mehrab";
 // let 12name = "mehrab";
 let _12_name = "mehrab";
-console.log(typeof _12_name)
+// console.log(typeof _12_name)
 let $name = "merhab";
-console.log(typeof $name)
+// console.log(typeof $name)
 
 
 // let mehrab_@ = "mehrab"
 let mehrab12 = "mehrab"
-console.log(typeof mehrab12)
+// console.log(typeof mehrab12)
 
 // let name# = "mehrab"
 // let #$ %^# = "merhab"
@@ -86,22 +86,35 @@ teacherName = false
 dishItem = true
 studentId = true
 
-console.log(typeof mehrab12)
-console.log(typeof $name)
-console.log(typeof _12_name)
-console.log(typeof department)
-console.log(typeof teacherName)
-console.log(typeof dishItem)
-console.log(typeof studentId)
+// console.log(typeof mehrab12)
+// console.log(typeof $name)
+// console.log(typeof _12_name)
+// console.log(typeof department)
+// console.log(typeof teacherName)
+// console.log(typeof dishItem)
+// console.log(typeof studentId)
 
 
 itemPrice = "50000"
-console.log(typeof itemPrice)
+// console.log(typeof itemPrice)
 
 bankAccountNum = "223 2334 5325"
-console.log(typeof bankAccountNum)
+// console.log(typeof bankAccountNum)
+
+/**
+ * Initialize a variable yearOfBirth to your birth year (number). Change this number to string and then back to number.
+ */
+
+
+let yearOfBirth = 2000
+console.log(typeof yearOfBirth)
 
 
 
+let strYearBirth = yearOfBirth.toString()
+console.log(typeof strYearBirth)
 
+
+let numYearBirth = Number(strYearBirth)
+console.log(typeof numYearBirth)
 
