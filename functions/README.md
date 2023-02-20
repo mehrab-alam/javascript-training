@@ -66,3 +66,7 @@ const isEligibleForAdmission = (yearOfBirth) => ???
 ```
 const isWarrantyValid = (purchaseDate) => ???
 ```
+
+5. Write an arrow function, `calculateAge` to find the age of the person based on yearOfBirth. Then use this function to create another function, checkEligibility if he is eligible for entrance examination for civil services, given the age range of 21 to 30 years.
+
+6. Re-write the above function to take the `calculateAge` function as a parameter.
