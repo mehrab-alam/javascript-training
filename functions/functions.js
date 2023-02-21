@@ -140,7 +140,7 @@ fruits.concat("peach")
 // answer = [ 'kiwi', 'apple', 'banana', 'mango', 'peach' ]
 
 //findLastIndex = finds the last index of the array
-fruits.findLastIndex()
+fruits.findLastIndex(x => x)
 // [ 'kiwi', 'apple', 'banana', 'mango' ]
 // answer = 3
 
@@ -193,7 +193,7 @@ fruits.toLocaleString()
  *  arguments and the specified constructor as the new.target value.
  */
 
-fruits.construct(fruits, fruits)
+fruits.constructor()
 // [["mango","apple","banana"],["mango","apple","banana"]]
 /**
  * flat = returns a new array with all sub-array elements 
@@ -280,3 +280,82 @@ fruits.sort((a, b) => a - b)
 
 fruits.values()
 // problem
+
+
+// assignment 4.3
+
+
+/**
+ *  1. Create an array `marks` that stores the marks of a student in all the subjects. 
+ * Convert the this array of marks to an array of `grades` based on the following rule.
+  
+    a. Grade 'A' for marks between 80 and 100
+    
+    b. Grade B for marks between 60 and 80
+
+    c. Grade C for marks between 40 and 60
+
+    d. Grade 'D' for marks below 40
+ */
+
+
+let marks = [75, 65, 85, 49, 52, 38, 53]
+
+let grades = []
+
+let marksGrade = marks.map(mark => {
+    if (mark > 80 && mark <= 100) {
+        grades.push("A")
+    }
+    else if (mark > 60 && mark <= 80) {
+        grades.push("B")
+    }
+    else if (mark > 40 && mark <= 60) {
+        grades.push("C")
+    }
+    else {
+        grades.push("D")
+    }
+}
+)
+console.log(grades)
+
+/**
+ * 2. Create an array of array to store the marks scored in all the subjects in all the
+ *  8 semesters of an engineering program and
+ *  then merge all the marks and calculate the grades based on the above grades rule.
+ */
+
+let semMarks = [[45, 67, 34, 69, 89, 23],
+[55, 37, 34, 29, 29, 43],
+[65, 47, 54, 89, 69, 63],
+[75, 87, 74, 79, 59, 53],
+[55, 27, 64, 69, 89, 63],
+[35, 97, 94, 99, 49, 73],
+[72, 77, 74, 49, 99, 83],
+[45, 47, 54, 39, 80, 93],]
+
+let mergMark = semMarks.flat()
+
+mergMark.map(mark => {
+    if (mark > 80 && mark <= 100) {
+        grades.push("A")
+    }
+    else if (mark > 60 && mark <= 80) {
+        grades.push("B")
+    }
+    else if (mark > 40 && mark <= 60) {
+        grades.push("C")
+    }
+    else {
+        grades.push("D")
+    }
+}
+)
+console.log(grades)
+
+/**
+ * class assignment
+ */
+
+stu
