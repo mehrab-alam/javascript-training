@@ -15,3 +15,26 @@ while (!answer) {
     console.log(`number between ${lowerRange} and ${higherRange}`)
 }
 window.alert(`The guess number is ${answer}`)
+
+let price = 100
+let profit = 10
+
+switch (state) {
+    case 'UP':
+        console.log(`The price of the item is ${price + (profit / 100 * price) + (12.5 / 100 * price)}`)
+        break;
+
+    case 'MP':
+        console.log(`The price of the item is ${price + (profit / 100 * price) + (10 / 100 * price)}`)
+        break;
+    case 'Bihar':
+        console.log(`The price of the item is ${price + (profit / 100 * price) + (5 / 100 * price)}`)
+        break;
+
+    case 'Karnataka':
+        console.log(`The price of the item is ${price + (profit / 100 * price) + (10 / 100 * price)}`)
+        break;
+
+    default:
+        break;
+}

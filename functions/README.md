@@ -70,3 +70,7 @@ const isWarrantyValid = (purchaseDate) => ???
 5. Write an arrow function, `calculateAge` to find the age of the person based on yearOfBirth. Then use this function to create another function, checkEligibility if he is eligible for entrance examination for civil services, given the age range of 21 to 30 years.
 
 6. Re-write the above function to take the `calculateAge` function as a parameter.
+
+7. Given the yearOfBirth and age of retirement as 60 years, write a function, `getRetirementYear` to get the year of retirement.
+
+8. Create functions - add, multiply, substract and divide and then use these functions in another function `calculator` that takes 3 parameters - `a (number)`, `b (number)` and operation name(string) which can be `add, substract, multiply and divide`
