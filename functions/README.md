@@ -74,3 +74,43 @@ const isWarrantyValid = (purchaseDate) => ???
 7. Given the yearOfBirth and age of retirement as 60 years, write a function, `getRetirementYear` to get the year of retirement.
 
 8. Create functions - add, multiply, substract and divide and then use these functions in another function `calculator` that takes 3 parameters - `a (number)`, `b (number)` and operation name(string) which can be `add, substract, multiply and divide`
+
+
+### Array functions
+
+There are number of methods defined on the array object like `map`, `flatMap`, `filter` and many more that takes function as a parameter.
+
+Lets look at the filter function, that only displays those fruits that starts with 'o'.
+
+```js
+let fruits = ["apple", "orange"]
+
+//find all the fruits that start with 'o'
+fruits.filter(f => f.startsWith('o'))
+```
+
+Here the anonymous function `f => f.startsWith('o')` is passed as parameter to the filter function, that executes it for every element in the array.
+
+#### Assignment 4.2
+
+Now use all the methods listed below in the screenshot with complete explaination.
+
+![array-methods](array-methods.png "List of array methods")
+
+#### Assignment 4.3
+
+1. Create an array `marks` that stores the marks of a student in all the subjects. Convert the this array of marks to an array of `grades` based on the following rule.
+  
+    a. Grade 'A' for marks between 80 and 100
+    
+    b. Grade B for marks between 60 and 80
+
+    c. Grade C for marks between 40 and 60
+
+    d. Grade 'D' for marks below 40
+
+    Example: 
+    let marks = [23,45,67,65,87,90]
+     then grades should be ['D','C','B','A', 'A']
+
+2. Create an array of array to store the marks scored in all the subjects in all the 8 semesters of an engineering program and then merge all the marks and calculate the grades based on the above grades rule.
