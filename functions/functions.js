@@ -94,7 +94,7 @@ const getRetirementYear2 = (yearOfBirth, calculateAgesFunc) => {
  * higher order function
  */
 
-fruits = ["mango", "apple", "melon", "guava"]
+fruits = ["mango", "banana", "apple", "guava"]
 
 /**
  * array.every
@@ -103,98 +103,141 @@ fruits = ["mango", "apple", "melon", "guava"]
  * in the array until the predicate returns a value which is coercible to
  *  the Boolean value false, or until the end of the array.
  */
-fruits.every(x => x.length > 5)
-
+fruits.every(x => x.length > 4)
+//answer = True
 /**
- * findLast
+ * findLast =  return the last element of the array
  */
 
 fruits.findLast(x => x)
+// answer = "guava"
 /**
- * fruits.includes
+ * fruits.includes = it will return the boolean value wheather this element included in it or not
  */
 fruits.includes("apple")
-
+// answer = True
 /**
- * fruits.reverse
+ * fruits.reverse = it will reverse the element in the array
  */
 
 fruits.reverse()
+//answer = [ 'guava', 'apple', 'banana', 'mango' ]
+
 /**
- * splice
+ * splice = it will remove the element and return the element and also can add any element
  */
 
 fruits.splice(0, 1, "kiwi")
+
+//answer = [ 'guava' ]
+// [ 'kiwi', 'apple', 'banana', 'mango' ] 
+
+
 /**
  * concat - add string or number  at last
  */
-fruits.concat()
+fruits.concat("peach")
+// answer = [ 'kiwi', 'apple', 'banana', 'mango', 'peach' ]
 
-//findLastIndex
+//findLastIndex = finds the last index of the array
 fruits.findLastIndex()
+// [ 'kiwi', 'apple', 'banana', 'mango' ]
+// answer = 3
 
-//indexOf
+//indexOf = finds the index of a particular element
 fruits.indexOf("banana")
-//pop = remove and return last index of array
-fruits.pop()
-//fill = change the array with the inserting array
-
-fruits.fill("kiwi", 0, 2)
+// answer = 2
 
 /**
+ * pop = remove and return last index of array
+ */
+
+fruits.pop()
+// answer = mango
+// [ 'kiwi', 'apple', 'banana' ]
+
+/**
+ * fill = change the array with the inserting array
+ */
+
+
+
+fruits.fill("kiwi", 0, 2)
+// answer = ["kiwi","kiwi","kiwi"]
+
+/**
+ [ 'kiwi', 'apple', 'banana' ]
+ * 
  * shift = Removes the first element from an array and returns it. If the array is empty
 , undefined is returned and the array is not modified.
 
  */
 
-fruits.shift("mango")
+fruits.shift()
+
+// output = kiwi
+// ["apple","banana"]
 /**
- * unshift = nserts new elements at the start of an array,
+ * unshift = inserts new elements at the start of an array,
  *  and returns the new length of the array.
  */
-fruits.unshift()
-
+fruits.unshift("mango")
+// output = ["mango","apple","banana"]
 /**
  * Returns a date converted to a string using the current locale.
  */
 fruits.toLocaleString()
+
 /**
  * construct = Constructs the target with the elements of specified array as the
  *  arguments and the specified constructor as the new.target value.
  */
 
-fruits.construct()
+fruits.construct(fruits, fruits)
+// [["mango","apple","banana"],["mango","apple","banana"]]
 /**
  * flat = returns a new array with all sub-array elements 
  * concatenated into it recursively up to the specified depth.
  */
 
 fruits.flat()
+//output = ["mango","apple","banana","mango","apple","banana"]
+
 
 /**
  * join = join all the elements of array
  */
 
 fruits.join("")
+//output = "mango,apple,banana,mango,apple,banana"
+
 /**
  * push = Appends new elements to the end of an array, and returns the new length of the array.
  */
 
-fruits.push()
+fruits.push("grapes")
+//output = ["mango","apple","banana","mango","apple","banana","grapes"]
+
 /**
  * slice = the index to the beginning of the specified portion of stringObj.
 Returns a section of a string.
  */
 
-fruits.slice()
+fruits.slice(0)
+
+// output = "mango" 
 /**
  * toString = change the array to string
  */
 fruits.toString()
+//"apple","banana","mango","apple","banana","grapes"
+
 /**
  * flatmap = the flatMap method calls the callback function one time for each element in the array.
  */
 fruits.flatMap(x => x)
+// [ [ 'apple', 'banana' ], [ 'apple', 'banana' ] ]
+//output = ["apple",mango]
 /**
  * keys = Returns the names of the enumerable string properties and methods of an object.
  */
@@ -204,13 +247,16 @@ fruits.keys()
  * reduce = A function that accepts up to four arguments.
  *  The reduce method calls the callbackfn function one time for each element in the array.
  */
-fruits.reduce()
+fruits.reduce(x => x.length < 5)
+//output = ["banana"] problem
+
 /**
  * some = The some method calls the predicate 
  * function for each element in the array until the predicate returns a value
  *  which is coercible to the Boolean value true, or until the end of the array.
  */
 fruits.some(x => x.length > 4)
+// output = true
 /**
  * emteries =
  */
@@ -218,9 +264,19 @@ fruits.entries()
 
 
 fruits.findIndex(x => x)
+// output = 0 problem
+/**
+ * lastInsexOf = return the index number of last element
+ */
 
 fruits.lastIndexOf()
-
+//output = -1
+/**
+ * sort = arrange the items in ascending or descending
+ * [1,5,3,7,32,8]
+ */
 fruits.sort((a, b) => a - b)
+// output = [1,,3,5,7,8,32]
 
 fruits.values()
+// problem
