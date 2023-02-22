@@ -1,3 +1,5 @@
+
+
 /**
  * Write an arrow function to find the highest marks. Function definition should be as below.
  */
@@ -357,5 +359,238 @@ console.log(grades)
 /**
  * class assignment
  */
+let student_1 = {
+    name: "Mehrab",
+    age: 22,
+    marks: [78, 98, 54, 34, 56],
+    isStudent: true,
+    bornDate: new Date("2000-06-06"),
+    sayHello: () => console.log("hello everyone")
+}
 
-stu
+let student_2 = {
+    name: "Aslam",
+    age: 20,
+    marks: [48, 58, 64, 54, 46],
+    isStudent: true,
+    bornDate: new Date("2002-08-06"),
+    sayHello: () => console.log("hello everyone")
+}
+
+let student_3 = {
+    name: "Usman",
+    age: 18,
+    marks: [78, 58, 74, 64, 46],
+    isStudent: true,
+    bornDate: new Date("2004-05-16"),
+    sayHello: () => console.log("hello everyone")
+}
+
+
+students.filter(s => {
+    if (getAvgs(s.marks) > 60) {
+        return s.marks
+    }
+}
+)
+
+students.filter(s => {
+    if (getAvgs(s.marks) > 60) {
+        return s.marks
+    }
+}
+).map(n => n.name)
+/**
+ * 1. Create multiple objects of type item, which has the following properties:
+
+   - itemName(string)
+
+   - itemPrice(number)
+
+   - orderCount(number)
+
+ */
+
+let item1 = {
+    itemName: "biryani",
+    itemPrice: 480,
+    orderCount: 120
+}
+let item2 = {
+    itemName: "chicken masala",
+    itemPrice: 1110,
+    orderCount: 89
+}
+let item3 = {
+    itemName: "tandoori",
+    itemPrice: 1200,
+    orderCount: 35
+}
+let item4 = {
+    itemName: "cheesy pasta",
+    itemPrice: 600,
+    orderCount: 16
+}
+
+let items = [item1, item2, item3, item4]
+
+/**
+ *   - Find the items whose price is greater than 1000.
+ */
+const findGreaterPrice = (priceOfItem) => {
+    if (priceOfItem > 1000) {
+        return priceOfItem
+    }
+}
+
+items.filter(p => findGreaterPrice(p.itemPrice))
+/**
+ * - Find the item which has the most number of orders.
+ */
+// let orders = items.map(o => o.orderCount)
+
+const findMostOrder = (orders) => {
+    let mostOrder = 0;
+    orders.forEach(o => {
+        if (o.orderCount > mostOrder) {
+            mostOrder = o.orderCount
+        }
+    })
+    return mostOrder
+}
+
+items.filter(n => {
+    if (n.orderCount == findMostOrder(items)) {
+        console.log(n.itemName)
+    }
+
+}
+)
+
+
+/**
+ * Sort the items in ascending order of its price.
+ */
+items.map(s => s.itemPrice).sort((b, a) => b - a)
+/**
+ * Transform the items array into a list of items which has only two attributes - itemName and itemPrice.
+ */
+
+
+
+
+
+/**
+ * 
+2. Create mulitple objects of type medicine, which has the following properties -
+
+   - medName
+
+   - medPurchaseDate
+
+   - medExpiryDate
+   1. Create multiple objects of type item, which has the following properties:
+
+   - medPrice
+ */
+
+let med1 = {
+    medName: "Paracitamol",
+    medPurchaseDate: new Date("2023-2-15"),
+    medExpiryDate: new Date("2024-1-1"),
+    medPrice: 562
+}
+let med2 = {
+    medName: "zincovit",
+    medPurchaseDate: new Date("2023-1-10"),
+    medExpiryDate: new Date("2021-2-24"),
+    medPrice: 1255
+}
+let med3 = {
+    medName: "ondem",
+    medPurchaseDate: new Date("2022-12-12"),
+    medExpiryDate: new Date("2024-12-5"),
+    medPrice: 956
+}
+let med4 = {
+    medName: "zintac",
+    medPurchaseDate: new Date("2023-2-12"),
+    medExpiryDate: new Date("2022-2-4"),
+    medPrice: 1012
+}
+
+let meds = [med1, med2, med3, med4]
+
+/**
+ * Find the meds whose price is greater than 1000.
+ */
+
+
+meds.filter(p => findGreaterPrice(p.medPrice))
+/**
+ * Find the medicine which was purchased latest.
+ */
+const latestPurchas2 = (purchaseDate) => {
+    let latest = new Date("2023-2-22").getTime();
+    purchaseDate.forEach(s => {
+        if (new Date().getTime() - s.medPurchaseDate.getTime() < latest) {
+            latest = s.medPurchaseDate.getTime()
+        }
+    })
+
+    return new Date(latest)
+}
+
+meds.filter(n => {
+    if (n.medPurchaseDate == latestPurchas2(meds)) {
+        console.log(n.medName)
+    }
+
+}
+)
+/**
+ * Sort the items in ascending order of its expiry date.
+ */
+let arrange = meds1.map(s => s.medExpiryDate.getTime()).sort((b, a) => b - a)
+
+// const arrangeAscend = (ascend, meds1) => {
+//     ascend.map(s => {
+//         if (meds1.forEach(k => k.medExpiryDate.getTime()) == s) {
+//             return k
+//         }
+//     })
+//     return ascend
+// }
+
+/**
+ *  Filter the medicine which has crossed the expiry date.
+ */
+const filterExpireMed4 = (medicine) => {
+    medicine.filter(s => {
+        if (s.medExpiryDate.getTime() < new Date().getTime()) {
+            console.log(s.medName)
+        }
+    })
+}
+filterExpireMed(meds).map(n => n.medName)
+
+/**
+ * Find the medicine which has the least price.
+ */
+
+const findLeastPrice = (medicine) => {
+    let lowestPrice = 0;
+    medicine.filter(p => {
+        if (p.medPrice > lowestPrice) {
+            lowestPrice = p.medPrice
+        }
+    })
+    return lowestPrice
+}
+
+meds.forEach(s => {
+    if (s.medPrice == findLeastPrice(meds)) {
+        console.log(s)
+        console.log(s.medName)
+    }
+})

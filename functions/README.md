@@ -172,7 +172,7 @@ The properties - (attributes / methods) can also be accessed using the field nam
 
    - medPurchaseDate
 
-   - medExpiryDate
+   - medExpiryDate1. Create multiple objects of type item, which has the following properties:
 
    - medPrice
 
