@@ -78,12 +78,13 @@ let orderDetails2 = {
     quantityOder: 18
 }
 
-const buyMobiles = (modelName, orderDetail) => {
-    for (mobPhn of mobilePhone) {
-        if (modelName == mobPhn.model) {
-            if (orderDetail < mobPhn.quantityAvailable) {
-                return mobPhn.quantityAvailable -= orderDetail
+const buyMobiles = (phoneSet, orderDetail) => {
+    for (mobPhn of phoneSet) {
+        if (orderDetail.modelName == mobPhn.model) {
+            if (orderDetail.quantityOder < mobPhn.quantityAvailable) {
+                mobPhn.quantityAvailable -= orderDetail.quantityOder;
             } else {
+                console.log(`sorry this phone is out of stock , this mobile has only ${mobPhn.quantityAvailable} left`)
                 mobilePhone.delete(mobPhn)
             }
         }
@@ -91,5 +92,5 @@ const buyMobiles = (modelName, orderDetail) => {
     return mobilePhone
 }
 
-buyMobiles(orderDetails2.modelName, orderDetails2.quantityOder)
+buyMobiles(mobilePhone, orderDetails2)
 
