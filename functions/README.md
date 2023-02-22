@@ -75,7 +75,6 @@ const isWarrantyValid = (purchaseDate) => ???
 
 8. Create functions - add, multiply, substract and divide and then use these functions in another function `calculator` that takes 3 parameters - `a (number)`, `b (number)` and operation name(string) which can be `add, substract, multiply and divide`
 
-
 ### Array functions
 
 There are number of methods defined on the array object like `map`, `flatMap`, `filter` and many more that takes function as a parameter.
@@ -83,10 +82,10 @@ There are number of methods defined on the array object like `map`, `flatMap`, `
 Lets look at the filter function, that only displays those fruits that starts with 'o'.
 
 ```js
-let fruits = ["apple", "orange"]
+let fruits = ["apple", "orange"];
 
 //find all the fruits that start with 'o'
-fruits.filter(f => f.startsWith('o'))
+fruits.filter((f) => f.startsWith("o"));
 ```
 
 Here the anonymous function `f => f.startsWith('o')` is passed as parameter to the filter function, that executes it for every element in the array.
@@ -100,17 +99,91 @@ Now use all the methods listed below in the screenshot with complete explainatio
 #### Assignment 4.3
 
 1. Create an array `marks` that stores the marks of a student in all the subjects. Convert the this array of marks to an array of `grades` based on the following rule.
-  
-    a. Grade 'A' for marks between 80 and 100
-    
-    b. Grade B for marks between 60 and 80
 
-    c. Grade C for marks between 40 and 60
+   a. Grade 'A' for marks between 80 and 100
 
-    d. Grade 'D' for marks below 40
+   b. Grade B for marks between 60 and 80
 
-    Example: 
-    let marks = [23,45,67,65,87,90]
-     then grades should be ['D','C','B','A', 'A']
+   c. Grade C for marks between 40 and 60
+
+   d. Grade 'D' for marks below 40
+
+   Example:
+   let marks = [23,45,67,65,87,90]
+   then grades should be ['D','C','B','A', 'A']
 
 2. Create an array of array to store the marks scored in all the subjects in all the 8 semesters of an engineering program and then merge all the marks and calculate the grades based on the above grades rule.
+
+### Understanding Objects
+
+Objects consist of primitive data types and also other objects. Lets look at an example of student
+
+```js
+let student = {
+  name: "Shad",
+  age: 30,
+  marks: [34, 67, 87, 90],
+  bornDate: new Date(2000, 10, 10),
+  sayHello: () => console.log("Hello objects"),
+};
+```
+
+Every object has attributes and methods defined and each of this attributes/methods can be accessed using the dot, as shown below.
+
+```js
+> student.name
+'Shad'
+
+> student.marks
+[34,67,87,90]
+
+```
+
+The properties - (attributes / methods) can also be accessed using the field name specified in the bracket as shown below.
+
+```js
+> student['marks']
+[ 34, 67, 87, 90 ]
+```
+
+#### Assignment 4.4
+
+1. Create multiple objects of type item, which has the following properties:
+
+   - itemName(string)
+
+   - itemPrice(number)
+
+   - orderCount(number)
+
+   Create a variable `items` that will store all the item objects created in the previous step.
+
+   - Find the items whose price is greater than 1000.
+
+   - Find the item which has the most number of orders.
+
+   - Sort the items in ascending order of its price.
+
+   - Transform the items array into a list of items which has only two attributes - itemName and itemPrice.
+
+2. Create mulitple objects of type medicine, which has the following properties -
+
+   - medName
+
+   - medPurchaseDate
+
+   - medExpiryDate
+
+   - medPrice
+
+   Create a variable `meds` that will store all the item objects created in the previous step.
+
+   - Find the meds whose price is greater than 1000.
+
+   - Find the medicine which was purchased latest.
+
+   - Sort the items in ascending order of its expiry date.
+
+   - Filter the medicine which has crossed the expiry date.
+
+   - Find the medicine which has the least price.
