@@ -1,4 +1,23 @@
-<<<<<<< HEAD
+let phone1 = {
+    imeiNum: 1224,
+    price: 120000,
+    model: "samsung",
+    quantityAvailable: 10
+}
+
+let phone2 = {
+    imeiNum: 1224,
+    price: 120000,
+    model: "mi",
+    quantityAvailable: 10
+}
+
+let phone3 = {
+    imeiNum: 1224,
+    price: 120000,
+    model: "oneplus",
+    quantityAvailable: 10
+}
 let report = new Map()
 report.set("s1", {
     name: "mehrab",
@@ -238,27 +257,6 @@ const transformArticle = articleSet => {
 }
 
 
-=======
-let phone1 = {
-    imeiNum: 1224,
-    price: 120000,
-    model: "samsung",
-    quantityAvailable: 10
-}
-
-let phone2 = {
-    imeiNum: 1224,
-    price: 120000,
-    model: "mi",
-    quantityAvailable: 10
-}
-
-let phone3 = {
-    imeiNum: 1224,
-    price: 120000,
-    model: "oneplus",
-    quantityAvailable: 10
-}
 
 let phones = new Set([phone1, phone2, phone3])
 let order = {
@@ -278,4 +276,3 @@ const buyMobiles = (phoneSet, orderDetail) => {
     }
     return phoneSet;
 }
->>>>>>> 3b2cc21c5f837118f74ad0091d06bed2e41b6c8b

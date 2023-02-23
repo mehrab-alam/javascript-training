@@ -225,7 +225,7 @@ fruits.push("grapes")
 Returns a section of a string.
  */
 
-fruits.slice(0)
+fruits.slice()
 
 // output = "mango" 
 /**
@@ -546,14 +546,6 @@ meds.find(item => item.medPurchaseDate.getTime() == latest)
 meds.sort((a, b) => a.medExpiryDate.getTime() - b.medExpiryDate.getTime())
 
 
-// const arrangeAscend = (ascend, meds1) => {
-//     ascend.map(s => {
-//         if (meds1.forEach(k => k.medExpiryDate.getTime()) == s) {
-//             return k
-//         }
-//     })
-//     return ascend
-// }
 
 /**
  *  Filter the medicine which has crossed the expiry date.
@@ -580,4 +572,8 @@ let leastPrice = meds.map(i => i.medPrice).reduce((least, curr) => {
 })
 
 meds.find(med => med.medPrice == leastPrice)
+
+/**
+ * 
+ */
 
