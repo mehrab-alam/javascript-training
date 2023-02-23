@@ -228,7 +228,7 @@ const deleteSensitiveArticles = (sensitive, articleSet) => {
  *  the key would the author name and value will be the array of articles written by the author.
  */
 
-const transformArticle1 = articleSet => {
+const transformArticle = articleSet => {
     let articleMap = new Map();
     for (a of articleSet) {
         articleMap.set(a.author, a)
@@ -237,9 +237,3 @@ const transformArticle1 = articleSet => {
 }
 
 
-articles = new Map()
-articles.set("Philip Roth", article1)
-articles.set("Roger dowlf", article2)
-articles.set("Roman Ralf", article3)
-articles.set("Martin Luther", article4)
-articles.set("Martin Luther", article5)
