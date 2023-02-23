@@ -83,36 +83,55 @@ Set objects are collections of unique values. You can iterate its elements in in
 The following code shows some basic operations with a Set
 
 ```js
-const numSet = new Set()
-numSet.add(29)
-numSet.add(45)
+const numSet = new Set();
+numSet.add(29);
+numSet.add(45);
 
 //Remove elements
-numSet.delete(45)
+numSet.delete(45);
 
 //Get the size
-numSet.size
+numSet.size;
 
 // Iterate over the set
-for(item of numSet){
-  console.log(numSet)
+for (item of numSet) {
+  console.log(numSet);
 }
 
 //Build set from array
-const arrSet = new Set([2,5,6,3,2,6])
-
+const arrSet = new Set([2, 5, 6, 3, 2, 6]);
 ```
 
-#### Assignment 5.2
+#### Assignment 5.1
 
 Create a set of mobile phone objects which has the following properties.
 
-  a. imeiNum
+a. imeiNum
 
-  b. model
+b. model
 
-  c. price
+c. price
 
-  d. quantityAvailable
+d. quantityAvailable
 
-Now add create a function named buyMobiles that takes two parameters - phones set and orderDetail. OrderDetail is an object that would consist of model name  and quantity ordered. If the quantity ordered is greater than quantityAvailable, show a message that the mobile phone has only 'x' quantity and update the set by removing that phone from the set.
+Now add create a function named buyMobiles that takes two parameters - phones set and orderDetail. OrderDetail is an object that would consist of model name and quantity ordered. If the quantity ordered is greater than quantityAvailable, show a message that the mobile phone has only 'x' quantity and update the set by removing that phone from the set.
+
+Create a set of 5 articles which has the following properties.
+
+a. articleId(number)
+
+b. publishedDate(Date)
+
+c. content(string)
+
+d. author(string)
+
+i. Create a function `listArticlesPublished` that takes a date as a parameter and shows all the articles published on that date.
+
+ii. Create a function `findArticlesByAuthor` that takes an author as a parameter and shows all the articles published by that author.
+
+iii. Create a function `deleteArticles` that takes an author as a parameter and the article set as a parameter, deletes all the articles written by that author and returns the updated articles.
+
+iv. Create a function `deleteSensitiveArticles` that takes a sensitive word(string) as a parameter and the article set as a parameter, and deletes all the article that has that sensitive word.
+
+v. Transfrom the set of articles into map of articles where the key would the author name and value will be the array of articles written by the author.
