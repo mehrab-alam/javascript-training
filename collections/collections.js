@@ -170,7 +170,7 @@ const listArticlesPublished = date => {
  *  that takes an author as a parameter and shows all the articles published by that author.
  */
 
-const findArticlesByAuthor1 = author => {
+const findArticlesByAuthor = author => {
     for (a of articles) {
         if (a.author == author) {
             console.log(a)
@@ -196,25 +196,46 @@ const deleteArticles = (author, articleSet) => {
  * iv. Create a function `deleteSensitiveArticles` that takes a sensitive word(string)
  *  as a parameter and the article set as a parameter,
  *  and deletes all the article that has that sensitive word.
+ *    // if (words[i] == sensitive) {
+            // articles.delete(a)
+            // }
  */
 
 
-const deleteSensitiveArticles = sensitive => {
-    for (a of articles) {
+// const deleteSensitiveArticles1 = sensitive => {
+//     for (a of articles) {
+//         let words = a.content.split(" ")
+//         for (i = 0; i < words.length; i++) {
+//             words.filter(a => a != sensitive).join("")
+//         }
+//         return articles
+
+//     }
+// }
+
+
+const deleteSensitiveArticles8 = (sensitive, articleSet) => {
+    for (a of articleSet) {
         let words = a.content.split(" ")
-        for (i = 0; i < words.length; i++) {
-            if (words[i] == sensitive) {
-                articles.delete(a)
-            }
-        }
+        console.log(words)
+        let filtered = words.filter(a => a != sensitive).join(" ")
+        a.content = filtered
     }
-
+    return articleSet
 }
-
 /**
  * v. Transfrom the set of articles into map of articles where
  *  the key would the author name and value will be the array of articles written by the author.
  */
+
+const transformArticle1 = articleSet => {
+    let articleMap = new Map();
+    for (a of articleSet) {
+        articleMap.set(a.author, a)
+    }
+    return articleMap
+}
+
 
 articles = new Map()
 articles.set("Philip Roth", article1)
