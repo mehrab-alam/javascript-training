@@ -249,30 +249,136 @@ const deleteSensitiveArticles = (sensitive, articleSet) => {
  */
 
 const transformArticle = articleSet => {
-    let articleMap = new Map();
+    let mapOfArticles = new Map();
     for (a of articleSet) {
-        articleMap.set(a.author, a)
-    }
-    return articleMap
-}
-
-
-
-let phones = new Set([phone1, phone2, phone3])
-let order = {
-    model: "samsung",
-    quantityOrdered: 5
-}
-const buyMobiles = (phoneSet, orderDetail) => {
-    for (p of phoneSet) {
-        if (p.model == orderDetail.model) {
-            if (p.quantityAvailable > orderDetail.quantityOrdered) {
-                p.quantityAvailable -= orderDetail.quantityOrdered;
-            } else {
-                console.log(`This mobile has only ${p.quantityAvailable}`);
-                phoneSet.delete(p)
-            }
+        if (mapOfArticles.has(a.author)) {
+            let arrayOfArticles = mapOfArticles.get(a.author)
+            arrayOfArticles[arrayOfArticles.length] = a
+            mapOfArticles.set(a.author, arrayOfArticles)
+        } else {
+            mapOfArticles.set(a.author, [a])
         }
     }
-    return phoneSet;
+    return mapOfArticles
+}
+
+const articlesByAuthor = articleSet => {
+    let mapOFArticles = new Map()
+    for (a of articleSet) {
+        if (mapOFArticles.has(a.author)) {
+            mapOFArticles.set(a.author, mapOFArticles.get(a.author) + 1)
+        } else {
+            mapOFArticles.set(a.author, 1)
+        }
+    }
+    return mapOFArticles
+}
+
+/**
+ * 
+##### Create an ecommerce application by creating following set and maps
+
+ a. Create a map of 5 users, where email id is the
+  key and value is the detail of the user. Example as below.
+ */
+
+let usersInfo = new Map()
+
+usersInfo.set("virat@gmail.com", { name: "Virat", age: 32, city: "Delhi" })
+
+usersInfo.set("salman@gmail.com", { name: "Salman", age: 49, city: "Banglore" })
+
+usersInfo.set("rahul@gmail.com", { name: "Rahul", age: 31, city: "Ganktok" })
+
+usersInfo.set("zyan@gmail.com", { name: "Zyan", age: 30, city: "Mumbai" })
+
+usersInfo.set("maheesha@gmail.com", { name: "Maheesha", age: 28, city: "Panaji" })
+
+
+/**
+ * 
+ b. Create a set of products, each product has the following properties.
+
+    i. productId(number)
+    ii. brandName(string)
+    iii. quantityAvailable(number)
+    iv. price(number)
+    v. popularity(number)
+    vi. dateManufactured(Date)
+ */
+let product1 = {
+    productId: 0,
+    brandName: "Puma",
+    quantityAvailable: 12,
+    popularity: 0,
+    dateManufactured: new Date("2021-2-15")
+}
+let product2 = {
+    productId: 1,
+    brandName: "Adidas",
+    quantityAvailable: 14,
+    popularity: 0,
+    dateManufactured: new Date("2020-2-25")
+}
+let product3 = {
+    productId: 2,
+    brandName: "Zara",
+    quantityAvailable: 19,
+    popularity: 0,
+    dateManufactured: new Date("2022-8-15")
+}
+let product4 = {
+    productId: 3,
+    brandName: "Lee",
+    quantityAvailable: 11,
+    popularity: 0,
+    dateManufactured: new Date("2020-2-15")
+}
+let product5 = {
+    productId: 4,
+    brandName: "Lenovo",
+    quantityAvailable: 17,
+    popularity: 0,
+    dateManufactured: new Date("2021-2-15")
+}
+let setOfProducts = new Set([product1, product2, product3, product4, product5])
+
+
+/**
+ * 
+ c. Create an empty set of orders, where each order will be having the following properties.
+
+    i. orderId(number)
+    ii. dateOrdered(Date)
+    iii. userEmail(string)
+    iv. productsOrdered(Set of numbers): this will consist of all the product Ids.
+ */
+let productIds = [1, 3]
+let setOfOrder = new Set()
+
+/**
+ *  a. Create a function `orderProduct` that takes the productId, user email,
+ *  array of productIds, products set and the empty orderset and save all this 
+ * in the OrderSet and increments the product's popularity that has been ordered by 1.
+ */
+
+let orderProduct7 = (userEmail, productids, products, orders) => {
+    const ordersId = orders.size + 1
+    const productIdSet = new Set(productids)
+    console.log(productIdSet)
+    orders.add({
+        orderId: ordersId,
+        dateOrdered: new Date(),
+        userEmail: userEmail,
+        productsOrdered: productIdSet
+
+    })
+    console.log(products)
+    for (p of products) {
+        if (productIdSet.has(p.productId)) {
+            console.log(`increasing populartity of ${p.productId}`)
+            p.popularity += 1
+        }
+    }
+    return products
 }
