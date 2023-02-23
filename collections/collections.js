@@ -214,7 +214,7 @@ const deleteArticles = (author, articleSet) => {
 // }
 
 
-const deleteSensitiveArticles8 = (sensitive, articleSet) => {
+const deleteSensitiveArticles = (sensitive, articleSet) => {
     for (a of articleSet) {
         let words = a.content.split(" ")
         console.log(words)
