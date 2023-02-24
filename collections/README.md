@@ -169,4 +169,12 @@ v. Create a function `convertToMap` that takes the set of articles as parameter 
 
  b. Create a function `listAllProducts` that list all the products, order by manufacturing date
 
- c. Create a function, `listUsersByCity` that takes the city and users list as a parameter and list all the users.
+ c. Create a function, `listUsersByCity` that takes the city and users set as a parameter and list all the users in that city.
+
+ d. Create a function `listOrdersByUsers` that takes the orders set and products set as a parameter and returns a map of orders, where the key is the userId and value is the set of product brand name he has ordered.
+
+ e. Create a function `listOrdersOfProducts` that takes order set and products set as the parameter and returns a map of all the products, that has been ordered. The key of the returned map will be the brand name and the value will be the number of times the product has been ordered.
+
+ f. Create a function `sortProducts` that takes the product set and the field name as the parameter and returns an array of products that are sorted by the field name. For example if the function called - `sortProducts(products, "popularity")`, then the product set should be sorted by its popularity.
+
+ g. Create a function `mostPopularProductUsers` that takes the products, orders, and users as the parameter and returns an array of all the users who have ordered the product that has the highest popularity.
