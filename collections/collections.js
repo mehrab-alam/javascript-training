@@ -384,156 +384,6 @@ let orderProduct = (userEmail, productids, products, orders) => {
     return products
 }
 
-// let a1 = {
-//     articleId: 1,
-//     publishedDate: new Date(),
-//     content: "Javascript has map and set as keyed collection",
-//     author: "torqbit"
-// }
-
-
-// let a2 = {
-//     articleId: 2,
-//     publishedDate: new Date(),
-//     content: "Javascript has arrow and anonymous functions",
-//     author: "torqbit"
-// }
-
-
-// let a3 = {
-//     articleId: 3,
-//     publishedDate: new Date(),
-//     content: "Javascript has lot of features",
-//     author: "shad"
-// }
-// const deleteSensitiveArticles = (word, articleSet) => {
-//     for (article of articleSet) {
-//         let words = article.content.split(" ")
-//         if (words.include(word)) {
-//             articleSet.delete(article)
-//         }
-//     }
-//     return articleSet;
-// }
-
-// const convertToMap = articleSet => {
-//     let mapOfArticles = new Map();
-//     for (article of articleSet) {
-//         if (mapOfArticles.has(article.author)) {
-//             let arrayOfArticles = mapOfArticles.get(article.author);
-//             arrayOfArticles[arrayOfArticles.length] = article
-//             mapOfArticles.set(article.author, arrayOfArticles)
-//         } else {
-//             mapOfArticles.set(article.author, [article])
-//         }
-
-//     }
-//     return mapOfArticles;
-// }
-
-// const articlesByAuthor = articleSet => {
-//     let mapOfArticles = new Map();
-//     for (article of articleSet) {
-//         if (mapOfArticles.has(article.author)) {
-//             mapOfArticles.set(article.author, mapOfArticles.get(article.author) + 1)
-//         } else {
-//             mapOfArticles.set(article.author, 1)
-//         }
-//     }
-//     return mapOfArticles;
-// }
-
-// let users = new Map();
-// users.set("don@mail.com", {
-//     name: "Ram",
-//     age: 30,
-//     city: "Delhi"
-// })
-
-// users.set("dan@mail.com", {
-//     name: "Ramesh",
-//     age: 32,
-//     city: "Kolkata"
-// })
-
-// users.set("jane@mail.com", {
-//     name: "Jane Doe",
-//     age: 30,
-//     city: "New York"
-// })
-
-// users.set("joe@mail.com", {
-//     name: "Joey",
-//     age: 25,
-//     city: "California"
-// })
-
-// users.set("mark@mail.com", {
-//     name: "Mark",
-//     age: 30,
-//     city: "Washington"
-// })
-
-// let products = new Set()
-// products.add({
-//     productId: 1,
-//     brandName: "Sony",
-//     quantityAvailable: 10,
-//     price: 100000,
-//     popularity: 0,
-//     dateManufactured: new Date(2020, 11, 11)
-// })
-// products.add({
-//     productId: 4,
-//     brandName: "Sony",
-//     quantityAvailable: 10,
-//     price: 100000,
-//     popularity: 0,
-//     dateManufactured: new Date(2020, 11, 11)
-// })
-// products.add({
-//     productId: 2,
-//     brandName: "Samsung",
-//     quantityAvailable: 15,
-//     price: 100040,
-//     popularity: 0,
-//     dateManufactured: new Date(2021, 11, 11)
-// })
-// products.add({
-//     productId: 3,
-//     brandName: "Sony",
-//     quantityAvailable: 10,
-//     price: 145000,
-//     popularity: 0,
-//     dateManufactured: new Date(2019, 11, 11)
-// })
-// products.add({
-//     productId: 5,
-//     brandName: "LG",
-//     quantityAvailable: 5,
-//     price: 100500,
-//     popularity: 0,
-//     dateManufactured: new Date(2020, 4, 11)
-// })
-// let productIds = [1, 2]
-// let orders = new Set()
-// const orderProduct = (userEmail, productIds, products, orders) => {
-//     const orderId = orders.size + 1
-//     const productIdSet = new Set(productIds)
-//     orders.add({
-//         orderId: orderId,
-//         dateOrdered: new Date(),
-//         userEmail: userEmail,
-//         productsOrdered: productIdSet
-//     })
-
-//     for (product of products) {
-//         if (productIdSet.has(product.productId)) {
-//             product.popularity += 1
-//         }
-//     }
-//     return products;
-// }
 
 
 /**
@@ -543,25 +393,23 @@ let orderProduct = (userEmail, productids, products, orders) => {
  *  b. Create a function `listAllProducts` that list all the products, order by manufacturing date
  */
 
-const listAllProducts = (manufacturingDate) => {
-    for (p of setOfProducts) {
-        if (p.dateManufactured.getTime() == new Date(manufacturingDate).getTime()) {
-            return p
-        }
-    }
+const listAllProducts = (productSet) => {
+    return Array.from(productSet).sort((a, b) => a.dateManufactured.getTime() - b.dateManufactured.getTime())
 }
+
+
 
 /**
  * c. Create a function, `listUsersByCity` that takes the city and
  *  users set as a parameter and list all the users in that city.
  */
-const listUsersByCity6 = (cityName, usersInfo) => {
-    for (u of usersInfo.keys()) {
-        if (usersInfo.get(u).city == cityName) {
-            console.log(usersInfo.get(u))
-        }
-    }
+
+const listUsersByCity4 = (city, users) => {
+    return Array.from(users.Value()).filter(product => product.city == city)
 }
+
+
+
 
 /**
  * Create a function `listOrdersByUsers` that takes the orders set and products 
@@ -569,18 +417,25 @@ const listUsersByCity6 = (cityName, usersInfo) => {
  * where the key is the userId and value is the set of product brand name he has ordered.
  */
 
-const listOrdersByUsers = (orderSet, productSet) => {
-    let orderMap = new Map()
-    for (p of productSet) {
-        for (s of orderSet) {
+const listOrdersByUser6 = (orderSet, productSet) => {
+    let mapOfOrder = new Map()
+    let arrayOfProducts = Array.from(productSet)
+    for (o of orderSet) {
+        let arrayOfBrand = Array.from(o.productsOrdered).map(productId => {
+            let productFind = arrayOfProducts.find(product => product.productId == productId)
+            return productFind.brandName
+        })
+        console.log(arrayOfBrand)
 
-            if (s.productsOrdered.has(p.productId)) {
-                orderMap.set(s.userEmail, p.brandName)
-            }
+        if (mapOfOrder.has(o.userEmail)) {
+            let allBrandNames = Array.from(mapOfOrder.get(o.userEmail)).concat(arrayOfBrand)
+            console.log(allBrandNames)
+            mapOfOrder.set(o.userEmail, new Set(allBrandNames))
+        } else {
+            mapOfOrder.set(o.userEmail, new Set(arrayOfBrand))
         }
     }
-    return orderMap
-
+    return mapOfOrder
 }
 
 /**
@@ -591,54 +446,73 @@ const listOrdersByUsers = (orderSet, productSet) => {
  */
 
 
-const listOrdersOfProducts = (orderSet, productSet) => {
-    let productsMap = new Map
-    for (p of productSet) {
-        for (o of orderSet) {
-            if (o.productsOrdered.has(p.productId)) {
-                productsMap.set(p.brandName, p.popularity)
-            }
-        }
-    }
-    return productsMap
-}
 
+
+
+
+const listOrdersOfProducts = (orderSet, productSet) => {
+    let mapOfOrder = new Map()
+    let arrayOfProducts = Array.from(productSet)
+    for (o of orderSet) {
+        let arrayOfBrand = Array.from(o.productsOrdered).map(productId => {
+            let productFind = arrayOfProducts.find(product => product.productId == productId)
+            return productFind.brandName
+        })
+        arrayOfBrand.forEach(p => {
+            if (mapOfOrder.has(p)) {
+                mapOfOrder.set(p, mapOfOrder.get(p) + 1)
+            } else {
+                mapOfOrder.set(p, 1)
+
+            }
+        })
+    }
+    return mapOfOrder
+
+}
 /**
  *  f. Create a function `sortProducts` that takes the product set and the field name as the parameter and 
  * returns an array of products that are sorted by the field name.
  *  For example if the function called - `sortProducts(products, "popularity")`,
  *  then the product set should be sorted by its popularity.
- *  // if (p.popularity >= lowest && p.popularity <= highest) {
-        //     sortedValue.unshift(p.popularity)
-        //     lowest = p.popularity
-        // } else {
-        //     sortedValue.push(p.popularity)
-        //     highest = p.popularity
-        // }
-
  */
 
+const sortProduct1 = (productSet, fieldName) => {
+    return Array.from(productSet).sort((a, b) => a[fieldName] - b[fieldName])
 
-const sortProducts8 = (productSet) => {
-
-    let sortedValue = [];
-    for (p of productSet) {
-        sortedValue.push(p)
-
-
-    }
-
-    sortedValue.sort((a, b) => a.field - b.field)
-
-    return sortedValue
 }
+
+
+
 
 /**
  * Create a function `mostPopularProductUsers` that takes the products, orders, and users as the parameter
  *  and returns an array of all the users who have ordered the product that has the highest popularity.
-
+ 
  */
 
-const mostPopularProductUsers = (productSet, orderSet, users) => {
+const mostPopularProductUsers3 = (productSet, orderSet, users) => {
+    let productArr = Array.from(productSet)
+    let maxPopularity = productArr.reduce((maxPop, currnt) => {
+        if (maxPop > currnt.popularity) {
+            return maxPop
+        } else {
+            return currnt.popularity
+        }
+    }, 0);
+    let productIds = productArr.filter(p => p.popularity == maxPopularity).map(p => p.productId)
 
+    let usersWithPopelarProduct = [];
+    for (o of orderSet) {
+        let hasProduct = false;
+        for (orderedId of o.productsOrdered) {
+            if (!hasProduct && productIds.includes(orderedId)) {
+                hasProduct = true;
+            }
+        }
+        if (hasProduct) {
+            usersWithPopelarProduct.push(users.get(o.userEmail))
+        }
+    }
+    return usersWithPopelarProduct
 }
