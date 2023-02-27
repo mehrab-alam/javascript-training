@@ -282,18 +282,46 @@ const articlesByAuthor = articleSet => {
   key and value is the detail of the user. Example as below.
  */
 
+
+function Users(name, age, city) {
+    this.name = name
+    this.age = age
+    this.city = city
+}
+
+const user1 = new Users("Virat", 32, "Delhi")
+
+const user2 = new Users("Salman", 49, "Banglore")
+
+const user3 = new Users("Rahul", 31, "Gangtok")
+
+const user4 = new Users("Zyan", 30, "Delhi")
+
+const user5 = new Users("Maheesha", 28, "Panaji")
+
 let usersInfo = new Map()
 
 
-usersInfo.set("virat@gmail.com", { name: "Virat", age: 32, city: "Delhi" })
+usersInfo.set("virat@gmail.com", user1)
 
-usersInfo.set("salman@gmail.com", { name: "Salman", age: 49, city: "Banglore" })
+usersInfo.set("salman@gmail.com", user2)
 
-usersInfo.set("rahul@gmail.com", { name: "Rahul", age: 31, city: "Ganktok" })
+usersInfo.set("rahul@gmail.com", user3)
 
-usersInfo.set("zyan@gmail.com", { name: "Zyan", age: 30, city: "Delhi" })
+usersInfo.set("zyan@gmail.com", user4)
 
-usersInfo.set("maheesha@gmail.com", { name: "Maheesha", age: 28, city: "Panaji" })
+usersInfo.set("maheesha@gmail.com", user5)
+
+// usersInfo.set("virat@gmail.com", { name: "Virat", age: 32, city: "Delhi" })
+
+// usersInfo.set("salman@gmail.com", { name: "Salman", age: 49, city: "Banglore" })
+
+// usersInfo.set("rahul@gmail.com", { name: "Rahul", age: 31, city: "Ganktok" })
+
+// usersInfo.set("zyan@gmail.com", { name: "Zyan", age: 30, city: "Delhi" })
+
+// usersInfo.set("maheesha@gmail.com", { name: "Maheesha", age: 28, city: "Panaji" })
+
 
 
 /**
@@ -307,42 +335,65 @@ usersInfo.set("maheesha@gmail.com", { name: "Maheesha", age: 28, city: "Panaji" 
     v. popularity(number)
     vi. dateManufactured(Date)
  */
-let product1 = {
-    productId: 0,
-    brandName: "Puma",
-    quantityAvailable: 12,
-    popularity: 0,
-    dateManufactured: new Date("2021-2-15")
+
+
+function Products(productId, brandName, quantityAvailable, price, popularity, dateManufactured) {
+    this.productId = productId
+    this.brandName = brandName
+    this.quantityAvailable = quantityAvailable
+    this.price = price
+    this.popularity = popularity
+    this.dateManufactured = dateManufactured
 }
-let product2 = {
-    productId: 1,
-    brandName: "Adidas",
-    quantityAvailable: 14,
-    popularity: 0,
-    dateManufactured: new Date("2020-2-25")
-}
-let product3 = {
-    productId: 2,
-    brandName: "Zara",
-    quantityAvailable: 19,
-    popularity: 0,
-    dateManufactured: new Date("2022-8-15")
-}
-let product4 = {
-    productId: 3,
-    brandName: "Lee",
-    quantityAvailable: 11,
-    popularity: 0,
-    dateManufactured: new Date("2020-2-15")
-}
-let product5 = {
-    productId: 4,
-    brandName: "Lenovo",
-    quantityAvailable: 17,
-    popularity: 0,
-    dateManufactured: new Date("2021-2-15")
-}
+
+const product1 = new Products(0, "Puma", 12, 4000, 0, new Date("2021-2-15"))
+
+const product2 = new Products(1, "Adidas", 14, 3000, 0, new Date("2020-2-15"))
+
+const product3 = new Products(2, "Zara", 19, 600, 0, new Date("2022-8-15"))
+
+const product4 = new Products(3, "Lee", 11, 9000, 0, new Date("2020-2-15"))
+
+const product5 = new Products(4, "Lenovo", 17, 0, 3200, new Date("2021-2-15"))
+
 let setOfProducts = new Set([product1, product2, product3, product4, product5])
+
+
+// let product1 = {
+//     productId: 0,
+//     brandName: "Puma",
+//     quantityAvailable: 12,
+//     popularity: 0,
+//     dateManufactured: new Date("2021-2-15")
+// }
+// let product2 = {
+//     productId: 1,
+//     brandName: "Adidas",
+//     quantityAvailable: 14,
+//     popularity: 0,
+//     dateManufactured: new Date("2020-2-25")
+// }
+// let product3 = {
+//     productId: 2,
+//     brandName: "Zara",
+//     quantityAvailable: 19,
+//     popularity: 0,
+//     dateManufactured: new Date("2022-8-15")
+// }
+// let product4 = {
+//     productId: 3,
+//     brandName: "Lee",
+//     quantityAvailable: 11,
+//     popularity: 0,
+//     dateManufactured: new Date("2020-2-15")
+// }
+// let product5 = {
+//     productId: 4,
+//     brandName: "Lenovo",
+//     quantityAvailable: 17,
+//     popularity: 0,
+//     dateManufactured: new Date("2021-2-15")
+// }
 
 
 /**
@@ -355,7 +406,13 @@ let setOfProducts = new Set([product1, product2, product3, product4, product5])
     iv. productsOrdered(Set of numbers): this will consist of all the product Ids.
  */
 let productIds = [1, 3]
-let setOfOrder = new Set()
+let setOfOrders = new Set()
+function Orders(orderId, dateOfOrdered, userEmail, productsordered) {
+    this.orderId = orderId
+    this.dateOfOrdered = dateOfOrdered
+    this.userEmail = userEmail
+    this.productsOrdered = productsordered
+}
 
 /**
  *  a. Create a function `orderProduct` that takes the productId, user email,
@@ -363,17 +420,33 @@ let setOfOrder = new Set()
  * in the OrderSet and increments the product's popularity that has been ordered by 1.
  */
 
+// let orderProduct = (userEmail, productids, products, orders) => {
+//     const ordersId = orders.size + 1
+//     const productIdSet = new Set(productids)
+
+//     orders.add({
+//         orderId: ordersId,
+//         dateOrdered: new Date(),
+//         userEmail: userEmail,
+//         productsOrdered: productIdSet
+
+//     })
+//     console.log(products)
+//     for (p of products) {
+//         if (productIdSet.has(p.productId)) {
+//             console.log(`increasing populartity of ${p.productId}`)
+//             p.popularity += 1
+//         }
+//     }
+//     return products
+// }
+
 let orderProduct = (userEmail, productids, products, orders) => {
     const ordersId = orders.size + 1
     const productIdSet = new Set(productids)
+    orders.add(new Orders(ordersId, new Date(), userEmail, productIdSet))
 
-    orders.add({
-        orderId: ordersId,
-        dateOrdered: new Date(),
-        userEmail: userEmail,
-        productsOrdered: productIdSet
 
-    })
     console.log(products)
     for (p of products) {
         if (productIdSet.has(p.productId)) {
@@ -383,8 +456,6 @@ let orderProduct = (userEmail, productids, products, orders) => {
     }
     return products
 }
-
-
 
 /**
  * Now write the following programs.
@@ -516,3 +587,79 @@ const mostPopularProductUsers3 = (productSet, orderSet, users) => {
     }
     return usersWithPopelarProduct
 }
+
+
+
+
+function Cars(brandName, modelName, yearOfManufacture) {
+    this.brandName = brandName;
+    this.modelName = modelName;
+    this.yearOfManufactur = yearOfManufactur;
+}
+
+const car1 = new Cars("Audi", "A101", 2019)
+const car2 = new Cars("BMW", "L2", 2021)
+const car3 = new Cars("TATA ", "S21", 2022)
+
+
+const cars = [car1, car2, car3]
+
+const listCarsEarlierThan = (cars, year) => {
+    return cars.filter(c => c.yearOfManufacture < year)
+}
+
+const listCarsAge = (cars) => {
+    cars.forEach(c => {
+        console.log(`the ${c.brandName} car having model ${c.modelName} is ${new Date().getUTCFullYear() - c.yearOfManufacture} years old`)
+    }
+    )
+}
+
+Object.hasOwn(car1, 'brandName')
+
+/**
+ * calling method
+ */
+Cars.prototype.showMilage = function () {
+    console.log("this car has very low mileage")
+}
+
+Cars.prototype.calFunc = function () {
+    this.showMilage()
+}
+
+Cars.prototype.displayBrand = function () {
+    console.log(`the brand is ${this.brandName}`)
+}
+
+
+/**
+ * classes as backend in ES6
+ */
+
+class CarType {
+    wheelCount = 4;
+    constructor(brand, model, year) {
+        this.brand = brand;
+        this.model = model;
+        this.year = year;
+
+    }
+    static wheels = 6;
+    static convertToArray(set) {
+        return Array.from(set)
+    }
+}
+
+CarType.wheels
+//6
+CarType.wheelCount
+//undefined
+let car_1 = new CarType("TATA", "Breeza", 2009)
+car_1.wheelCount
+//4
+car_1.wheels
+// undefined
+car_1.brand
+//TATA
+
