@@ -27,14 +27,14 @@ function Course(courseId, name, durationInMonths, eligibility, startDate) {
 - Filter the courses that have already been completed.
  */
 
-const course1 = new Course(0, "Afan", 12, "graduation", new Date("2022-12-27"))
+const course1 = new Course(0, "Javascript", 12, "graduation", new Date("2022-12-27"))
 
-const course2 = new Course(1, "Evans", 10, "matriculation", new Date("2023-8-12"))
+const course2 = new Course(1, "Python", 10, "matriculation", new Date("2023-8-12"))
 
-const course3 = new Course(2, "Javed", 24, "B-Tech", new Date("2023-3-7"))
+const course3 = new Course(2, "Java", 24, "B-Tech", new Date("2023-3-7"))
 
-const course4 = new Course(3, "Mehrab", 8, "MBBS", new Date("2023-3-27"))
-const course5 = new Course(3, "Mehrab", 8, "MBBS", new Date("2021-3-27"))
+const course4 = new Course(3, "Reacr.js", 8, "MBBS", new Date("2023-3-27"))
+const course5 = new Course(3, "node.js", 8, "MBBS", new Date("2021-3-27"))
 
 
 let arrayOfCourses = [course1, course2, course3]
