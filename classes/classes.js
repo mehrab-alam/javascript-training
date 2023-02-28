@@ -50,7 +50,7 @@ const coursesAlreadyStarted = (arrayOfCourses) => {
  * 
  */
 
-const coursesStartInSevenDays9 = (arrayOfCourses) => {
+const coursesStartInSevenDays = (arrayOfCourses) => {
     arrayOfCourses.filter(c => (c.startDate.getTime() - new Date().getTime()) > 604800000)
 }
 
