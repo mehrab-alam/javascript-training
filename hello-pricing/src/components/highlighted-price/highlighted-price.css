@@ -1,0 +1,53 @@
+.highlighted-price {
+    box-shadow: 10px 20px 10px 20px hsl(228deg 19% 95%);
+    background-color: #1f2438;
+    color: #b9bccb;
+    border: 4px solid #FFF;
+    height: 100%;
+    padding: 10px 20px;
+    border-radius: 15px;
+    font-size: 1.2rem;
+}
+
+.highlighted-price>div:first-child {
+    display: flex;
+    justify-content: right;
+}
+
+.highlighted-price a {
+    text-decoration: none;
+    border: 1px solid;
+    padding: 5px 15px;
+    border-radius: 15px;
+    text-align: center;
+    background-color: #17d917;
+    color: #FFF;
+    border: none;
+}
+
+.highlighted-price button {
+    background-color: #707df0;
+    margin-top: 30px;
+}
+
+.highlighted-price h2 {
+    color: #707df0;
+    margin: 5px 0;
+}
+
+.highlight-price {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #FFF;
+}
+
+.highlight-price span {
+    font-weight: normal;
+    font-size: 1rem;
+}
+
+.highlighted-price hr {
+    background-color: #14161f;
+    margin-top: 10px;
+
+}

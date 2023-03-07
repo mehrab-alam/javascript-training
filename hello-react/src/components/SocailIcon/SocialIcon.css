@@ -1,0 +1,17 @@
+.social-img {
+    height: 60px;
+    width: 60px;
+    border: 1px solid;
+    border-radius: 12px;
+    background-color: black;
+    transform: scale(1);
+    transition: all .8s;
+}
+
+
+
+
+/* nav>div:hover {
+            cursor: pointer;
+            transform: scale(1.2);
+        } */

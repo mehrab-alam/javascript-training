@@ -1,0 +1,49 @@
+.pricing-detail {
+    color: #949292;
+    border: 0px solid;
+    font-size: 1.1rem;
+    background-color: #FFF;
+}
+
+.pricing-detail h2 {
+    color: #1f2438;
+    margin-bottom: 0px;
+}
+
+.price {
+    font-size: 2.5rem;
+    color: #1f2438;
+    font-weight: bold;
+}
+
+.price span {
+    font-size: 1rem;
+    font-weight: normal;
+}
+
+
+button {
+    cursor: pointer;
+    color: white;
+    border-radius: 8px;
+    height: 50px;
+    font-size: 1.3rem;
+    font-weight: bold;
+    width: 100%;
+    text-align: center;
+    background-color: #1f2438;
+    border: none;
+    margin-top: 10px;
+    font-weight: normal;
+}
+
+hr {
+    height: 2px;
+    border: none;
+    background-color: hsl(0deg 0% 97%);
+    margin-bottom: 20px;
+}
+
+.features {
+    margin: 10px 0;
+}
