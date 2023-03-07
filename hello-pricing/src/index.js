@@ -2,9 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 // import App from './App';
-import Header from './components/header/header';
-import PricingDetail from './components/pricing-detail/pricing-detail';
-import HighlightedPrice from './components/highlighted-price/highlighted-price';
+import Header from './components/Header/Header';
+import PricingDetail from './components/PricingDetail/PricingDetail';
+import HighlightedPrice from './components/HighlightedPrice/HighlightedPrice';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

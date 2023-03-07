@@ -1,9 +1,12 @@
+import "./HighlightedPrice.css"
 
-import "./pricing-detail.css"
-const PricingDetail = ({ header, price }) => (
-    <div className="pricing-detail price-basic">
+
+
+const HighlightedPrice = ({ header, price, link }) => (
+    <div className="highlighted-price">
+        <div><a href="">{link}</a></div>
         <h2>{header}</h2>
-        <div className="price">{price} <span>&nbsp; / month</span></div>
+        <div className="highlight-price">{price} <span>&nbsp; / month</span></div>
         <p>The perfect way to get started and get used to  <br /> our tools</p>
         <hr />
         <div className="features"><span><img src="" alt="" /></span> All features in standard</div>
@@ -13,6 +16,4 @@ const PricingDetail = ({ header, price }) => (
     </div>
 
 )
-
-export default PricingDetail;
-
+export default HighlightedPrice;
