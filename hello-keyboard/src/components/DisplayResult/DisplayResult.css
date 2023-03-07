@@ -1,0 +1,24 @@
+.display-container>textarea {
+    width: 900px;
+    padding: 10px 20px;
+    background-color: hsl(0deg 1% 15%);
+    outline: none;
+    color: white;
+    font-size: 1.5rem;
+}
+
+.btns {
+    text-align: center;
+}
+
+.keyboard>textarea {
+    background-color: black;
+    width: 900px;
+    color: white;
+    font-size: 2rem;
+    padding: 10px;
+}
+
+.spcbar {
+    width: 420px;
+}
