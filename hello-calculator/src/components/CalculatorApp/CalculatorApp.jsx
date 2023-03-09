@@ -2,10 +2,18 @@ import InputBtn from "../InputBtn/InputBtn";
 import React from "react";
 import "./CalculatorApp.css"
 const CalculatorApp = ({ btns }) => {
-    const [state, setOutPut] = React.useState({ outputValue: "" })
+    const [state, setOutPut] = React.useState({ outputValue: "", result: 0 })
     const btnClickHandler = (calculatorBtn) => {
         setOutPut({
+            ...state,
             outputValue: state.outputValue + calculatorBtn
+        });
+    }
+
+    const reset = () => {
+        setOutPut({
+            result: 0,
+            outputValue: ""
         });
     }
     const EqualBtn = () => {
@@ -29,19 +37,27 @@ const CalculatorApp = ({ btns }) => {
             output = (Number(operands[0]) / 100) * Number(operands[1])
         }
 
-        return output;
+        setOutPut({
+            ...state,
+            result: state.result + output
+        });
     }
+
+
 
 
     return (
         <div className="calculator">
             <input type="text" value={state.outputValue} />
-            <div className="result"><EqualBtn />
+            <div className="result">
+                {state.result}
             </div>
             <hr />
             <div className="calulatorBtns">
+                <button onClick={(e) => reset()}>C</button>
+
                 {btns.map((n, i) => <InputBtn clickHandler={btnClickHandler} calculatorBtn={n} key={i} />)}
-                <button onClick={EqualBtn()}>=</button>
+                <button onClick={(e) => EqualBtn()}>=</button>
             </div>
             <hr />
         </div >
